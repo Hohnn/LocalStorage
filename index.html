@@ -12,9 +12,10 @@
             color: rgb(255, 255, 255);
         }
         .output {
-            width: 500px;
-            background-color: darkcyan;
+            width: 100%;
+            background: linear-gradient(90deg, rgb(19, 184, 184),darkcyan);
             color: white;
+            overflow: hidden;
         }
         .header {
             background-color: cornflowerblue;
@@ -34,28 +35,35 @@
         }
     </style>
 </head>
-<body class="d-flex flex-column align-items-center">
-    <h1 class="my-4">Local Storage</h1>
-    <div class="input-group input-group-sm mb-3 w-25">
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-6 text-center">
+                <h1 class="my-4">Local Storage</h1>
+    <div class="input-group input-group-sm mb-3 w-100">
         <span class="input-group-text" id="inputGroup-sizing-sm">Titre</span>
         <input type="text" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
-    <div class="input-group input-group-sm mb-3 w-25">
+    <div class="input-group input-group-sm mb-3 w-100">
         <span class="input-group-text" id="inputGroup-sizing-sm">Lien</span>
         <input type="text" id="link" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
-    <div class="d-grid gap-2 w-25">
+    <div class="d-grid gap-2 w-100">
         <button class="btn btn-primary" id="btn" type="button">Ajouter</button>
         <button class="btn btn-primary" id="clear" type="button">Clear</button>
       </div>
     
-    <div class="output my-4" id="output">
+    <div class="rounded rounded-3 output my-4" id="output">
         <div class="d-flex header  fw-bold">
             <div class="number">#</div>
             <div class="title">Titre</div>
             <div class="delete ms-auto">Supprimer</div>
         </div>
     </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
 
         let title = document.getElementById('title')
