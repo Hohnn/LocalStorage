@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test DATA</title>
+</head>
+<body id="body">
+    
+    <button data-button data-type="first">first</button>
+    <button data-button data-type="second">second</button>
+    <button data-button data-type="">clear</button>
+
+    <input type="text" data-input>
+
+    <div id="container"></div>
+
+    <script>
+        let btn = document.querySelectorAll('button[data-button]')
+        console.log(btn)
+        let input = document.querySelector('input[data-input]')
+        console.log(input)
+        
+        btn.forEach(element => {
+            element.addEventListener('click', function() {
+                console.log('ok')
+                let cube = document.createElement('div')
+                cube.innerHTML = this.dataset.type
+                cube.className = 'cube'
+                cube.style.width = '50px'
+                cube.style.height= '50px'
+                cube.style.backgroundColor= 'grey'
+                container.append(cube)
+                localStorage.setItem('body', container.innerHTML)
+                
+                
+            })
+        })
+        storage()
+        function storage(params) {
+            let currentBody = localStorage.getItem('body')
+            container.innerHTML = currentBody
+        }
+
+    </script>
+
+</body>
+</html>
